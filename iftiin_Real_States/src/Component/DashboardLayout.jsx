@@ -20,7 +20,7 @@ const DashboardLayout = () => {
       const {logout} = useAuth();
 
   return (
-    <div className="flex min-h-screen bg-gray-50">
+    <div className="flex min-h-screen bg-gray-50 mb-4">
       <aside className="w-72 bg-white flex flex-col shadow-xl z-20">
         <div className="p-8">
           <div className="flex items-center gap-3">
