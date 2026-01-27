@@ -1,0 +1,20 @@
+import React from 'react'
+import { useAuth } from '../Context/AuthContext'
+import { Navigate } from 'react-router-dom';
+
+export const ProtectedRout = ({children, redirectTo="/signIn"}) => {
+  const {isLoading, isLoggedIn} = useAuth();
+  if(isLoading) {
+    return(
+       <div className="min-h-screen flex items-center justify-center">
+                <div className="animate-spin rounded-full h-12 w-12 border-t-2 border-b-2 border-orange-500"></div>
+            </div>
+    )
+  }
+  if(!isLoggedIn) {
+    return <Navigate to={redirectTo} replace />
+  }
+  return children;
+}
+
+export default ProtectedRout;
