@@ -17,7 +17,7 @@ const DashboardLayout = () => {
     isActive
       ? `${linkBase} bg-blue-50 text-blue-700 border-blue-600 font-semibold`
       : `${linkBase} text-slate-500 border-transparent hover:bg-slate-50 hover:text-slate-900`;
-      const {logout} = useAuth();
+      const {logout, profile} = useAuth();
 
   return (
     <div className="flex min-h-screen bg-gray-50 mb-4">
@@ -85,7 +85,7 @@ const DashboardLayout = () => {
         <main className="p-8">
           <div className="mb-8">
             <h2 className="text-3xl font-bold text-slate-800">
-              Welcome Back, Sarah
+              Welcome Back, {profile?.username}
             </h2>
             <p className="text-slate-500 mt-1">
               Here is what's happening with your properties today.

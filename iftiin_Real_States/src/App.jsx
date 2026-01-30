@@ -16,6 +16,8 @@ import Dashboard from "./Pages/Dashboard";
 import { AuthProvider } from "./Context/AuthContext";
 import UnAuthanticatedRout from "./Component/UnAuthanticatedRout";
 import ProtectedRout from "./Component/ProtectedRout";
+import BuyerInformation from "./Pages/BuyerInformation";
+import RentInformation from "./Pages/RentInformation";
 
 const App = () => {
   return (
@@ -38,7 +40,9 @@ const App = () => {
               >
                 <Route index element={<Dashboard />} />
                 <Route path="buy" element={<Buy />} />
+                <Route path="buy/:id" element={<BuyerInformation />} />
                 <Route path="rent" element={<Rent />} />
+                <Route path="rent/:id" element={<RentInformation />} />
                 <Route path="sell" element={<Sell />} />
               </Route>
               <Route path="/contact" element={<Contact />} />

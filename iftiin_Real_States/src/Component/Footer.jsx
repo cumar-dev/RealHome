@@ -113,6 +113,11 @@ const Footer = () => {
             </div>
           </div>
         </div>
+        <hr className="mt-4" />
+        <p className="mt-8 text-center text-base text-gray-400 hover:text-indigo-700">
+          &copy;{new Date().getFullYear()} RealHome. All rights reserved.
+        </p>
+
       </div>
     </div>
   );
