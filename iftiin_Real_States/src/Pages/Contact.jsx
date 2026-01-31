@@ -24,7 +24,7 @@ const Contact = () => {
     setIsLoading(true);
     setError(null);
     if (!user) {
-      toast.error("Hi your are not Logged please go SignIn page");
+      toast.error("Hi your are not Logged please go SignIn page", {position:"top-right"});
       navigate("/signIn");
       return;
     }
