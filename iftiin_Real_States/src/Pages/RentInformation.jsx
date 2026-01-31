@@ -107,9 +107,9 @@ const RentInformation = () => {
     },
   ];
 
-  const [email, setEmail] = useState('');
-  const [fullName, setFullName] = useState('');
-  const [message, setMessage] = useState('');
+  const [email, setEmail] = useState("");
+  const [fullName, setFullName] = useState("");
+  const [message, setMessage] = useState("");
   const [error, setError] = useState(null);
   const [success, setSucess] = useState(false);
   const [isLoading, setIsLoading] = useState(false);
@@ -124,86 +124,108 @@ const RentInformation = () => {
 
   const { id } = useParams();
   const filteredData = rentData.find((rent) => rent.id === Number(id));
-  return(
+  return (
     <>
-   <div className="bg-gray-50 p-5">
-           <div className="max-w-7xl mx-auto">
-             <div className="flex items-center gap-1 mb-2">
-               <PiLessThanLight />
-               <a
-                 href="#"
-                 onClick={() => navigate(-1)}
-                 className="underline font-semibold text-[rgb(105, 97, 89)]"
-               >
-                 Back
-               </a>
-             </div>
-             {filteredData && (
-               <div key={filteredData.id}>
-                 <div className="flex gap-6 sm:flex-col md:flex-row">
-                 <div>
-                   <img
-                     className="rounded-lg w-[825px] h-[420px] mb-1"
-                     src={filteredData.image}
-                     alt="not found the image"
-                   />
-                   <a className="underline text-[rgb(105, 97, 89) mb-1" href="#">
-                     How much You can afford?
-                   </a>
-                   <div className="flex items-center gap-1">
-                     <div className="w-3 h-3 rounded-full bg-green-700"></div>
-                     <span className="text-[rgb(43, 43, 43)] font-[400px]">
-                       House For sell
-                     </span>
-                   </div>
-                   <span className="font-semibold mb-1">
-                     {filteredData.description}
-                   </span>
-                   <p className="text-xl font-bold text-gray-900 mb-1">
-                     ${filteredData.price.toLocaleString()}
-                   </p>
-                   <div className="flex items-center gap-3">
-                     <p>
-                       <span className="font-semibold">
-                         {filteredData.bedrooms}
-                       </span>{" "}
-                       bed
-                     </p>
-                      <p>
-                       <span className="font-semibold">
-                         {filteredData.bathrooms}
-                       </span>{" "}
-                       bath
-                     </p>
-                   </div>
-                 </div>
-                 {/* form data */}
-                 <div className="max-w-2xs w-full">
-                   <div className="bg-white shadow-md border rounded-lg p-4 border-[rgb(211, 207, 202);] transition hover:shdow-lg">
-                     <h1 className="text-[20px] mb-2 font-bold text-[rgb(43,43,43)]">More About This Property</h1>
-                     <form className="flex flex-col gap-6 w-full">
-                       <div className="w-full">
-                         <input className="border-1 w-full border-[rgb(149, 138, 127);] p-y-3 px-4 rounded-md focus:outline-none" type="text" placeholder="Full name *" value={fullName} onChange={(e)=> setFullName(e.target.value)} />
-                       </div>
-                       <div>
-                         <input className="border-1 w-full border-[rgb(149, 138, 127);] p-y-3 px-4 rounded-md focus:outline-none" type="email" placeholder="Email *" value={email} onChange={(e)=> setEmail(e.target.value)} />
-                       </div>
-                       <div>
-                         <textarea className="border-1 w-full h-20  border-[rgb(149, 138, 127);] p-y-3 px-4 rounded-md focus:outline-none" placeholder="how can i help you?" value={message} onChange={(e)=> setMessage(e.target.value)}></textarea>
-                         </div>
-                         <button className="py-3 px-4 bg-[#AB1A1F] font-semibold text-white text-center rounded-2xl" type="submit">{isLoading ? "submitting..." : "submit"}</button>
-                     </form>
-                   </div>
-                 </div>
-   
-                 </div>
-   
-               </div>
-             )}
-           </div>
-         </div>
+      <div className="bg-gray-50 p-5">
+        <div className="max-w-7xl mx-auto">
+          <div className="flex items-center gap-1 mb-2">
+            <PiLessThanLight />
+            <a
+              href="#"
+              onClick={() => navigate(-1)}
+              className="underline font-semibold text-[rgb(105, 97, 89)]"
+            >
+              Back
+            </a>
+          </div>
+          {filteredData && (
+            <div key={filteredData.id}>
+              <div className="flex gap-6 sm:flex-col md:flex-row">
+                <div>
+                  <img
+                    className="rounded-lg w-[825px] h-[420px] mb-1"
+                    src={filteredData.image}
+                    alt="not found the image"
+                  />
+                  <a className="underline text-[rgb(105, 97, 89) mb-1" href="#">
+                    How much You can afford?
+                  </a>
+                  <div className="flex items-center gap-1">
+                    <div className="w-3 h-3 rounded-full bg-green-700"></div>
+                    <span className="text-[rgb(43, 43, 43)] font-[400px]">
+                      House For sell
+                    </span>
+                  </div>
+                  <span className="font-semibold mb-1">
+                    {filteredData.description}
+                  </span>
+                  <p className="text-xl font-bold text-gray-900 mb-1">
+                    ${filteredData.price.toLocaleString()}
+                  </p>
+                  <div className="flex items-center gap-3">
+                    <p>
+                      <span className="font-semibold">
+                        {filteredData.bedrooms}
+                      </span>{" "}
+                      bed
+                    </p>
+                    <p>
+                      <span className="font-semibold">
+                        {filteredData.bathrooms}
+                      </span>{" "}
+                      bath
+                    </p>
+                  </div>
+                </div>
+                {/* form data */}
+                <div className="max-w-2xs w-full">
+                  <div className="bg-white shadow-md border rounded-lg p-4 border-[rgb(211, 207, 202);] transition hover:shdow-lg">
+                    <h1 className="text-[20px] mb-2 font-bold text-[rgb(43,43,43)]">
+                      More About This Property
+                    </h1>
+                    <form className="flex flex-col gap-6 w-full">
+                      <div className="w-full">
+                        <input
+                          className="border-1 w-full border-[rgb(149, 138, 127);] py-3 px-4 rounded-md focus:outline-none"
+                          type="text"
+                          placeholder="Full name *"
+                          value={fullName}
+                          onChange={(e) => setFullName(e.target.value)}
+                        />
+                      </div>
+                      <div>
+                        <input
+                          className="border-1 w-full border-[rgb(149, 138, 127);] py-3 px-4 rounded-md focus:outline-none"
+                          type="email"
+                          placeholder="Email *"
+                          value={email}
+                          onChange={(e) => setEmail(e.target.value)}
+                        />
+                      </div>
+                      <div>
+                        <textarea
+                          className="border-1 w-full h-20  border-[rgb(149, 138, 127);] py-3 px-4 rounded-md focus:outline-none"
+                          placeholder="how can i help you?"
+                          value={message}
+                          onChange={(e) => setMessage(e.target.value)}
+                        ></textarea>
+                      </div>
+                      <button
+                        className="py-3 px-4 bg-[#AB1A1F] font-semibold text-white text-center rounded-2xl"
+                        type="submit"
+                      >
+                        {isLoading ? "submitting..." : "submit"}
+                      </button>
+                    </form>
+                  </div>
+                </div>
+              </div>
+            </div>
+          )}
+        </div>
+      </div>
     </>
-  )
+  );
 };
 
 export default RentInformation;
