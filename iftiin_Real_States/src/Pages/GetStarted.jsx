@@ -1,6 +1,7 @@
 import React, { useState } from "react";
 import { Link, useNavigate } from "react-router-dom";
 import { getStarted } from "../Lib/Auth";
+import toast from "react-hot-toast";
 
 const GetStarted = () => {
   const [username, setUsename] = useState("");
@@ -21,11 +22,15 @@ const GetStarted = () => {
     }
     try {
       await getStarted(username, email, password);
-       setSuccess(true);
+      setSuccess(true);
       setTimeout(() => {
         navigate("/signIn");
       }, 3000);
-     } catch (error) {
+      setUsename("");
+      setEmail("");
+      setPassword("");
+      setConfirmPassword("");
+    } catch (error) {
       console.error("error exsists during creating singUp", error);
     } finally {
       setIsLoading(false);
