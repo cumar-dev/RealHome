@@ -8,6 +8,7 @@ const {data, error} = await supabase
     {
         full_name: currentBuyerOrRenter.full_name,
         Email: currentBuyerOrRenter.Email,
+        property_name: currentBuyerOrRenter.property_name,
         option: currentBuyerOrRenter.option,
         message: currentBuyerOrRenter.message,
         current_users_id: currentBuyerOrRenter.current_users_id

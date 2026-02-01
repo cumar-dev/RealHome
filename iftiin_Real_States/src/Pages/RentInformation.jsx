@@ -117,6 +117,7 @@ const RentInformation = () => {
   const [isLoading, setIsLoading] = useState(false);
   const [type, setType] = useState("");
   const [userId, setUserId] = useState(null);
+  const [propertyName, setPropertyName] = useState('');
   const { user } = useAuth();
   const navigate = useNavigate();
   useEffect(() => {
@@ -135,6 +136,7 @@ const RentInformation = () => {
       await usersBuyingOrRentingData({
         full_name: fullName,
         Email: email,
+        property_name: propertyName,
         option: type,
         message: message,
         current_users_id: userId,
@@ -146,7 +148,8 @@ const RentInformation = () => {
       setFullName('');
       setEmail('');
       setType('');
-      setMessage('')
+      setMessage('');
+      setPropertyName('');
     } catch (error) {
       toast.error("during the process failed", { position: "top-right" });
       setError(error.message);
@@ -234,6 +237,16 @@ const RentInformation = () => {
                           placeholder="Email *"
                           value={email}
                           onChange={(e) => setEmail(e.target.value)}
+                          required
+                        />
+                      </div>
+                      <div>
+                        <input
+                          className="border-1 w-full border-[rgb(149, 138, 127);] py-3 px-4 rounded-md focus:outline-none"
+                          type="text"
+                          placeholder="property name *"
+                          value={propertyName}
+                          onChange={(e) => setPropertyName(e.target.value)}
                           required
                         />
                       </div>
