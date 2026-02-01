@@ -3,6 +3,7 @@ import toast from "react-hot-toast";
 import { getBuyData } from "../Lib/Buy";
 import { getRentData } from "../Lib/Rent";
 import { getSellData } from "../Lib/sell";
+import { FaKey, FaShoppingCart, FaTag } from "react-icons/fa";
 
 const Dashboard = () => {
   const [buyerData, setBuyerData] = useState([]);
@@ -60,30 +61,36 @@ const Dashboard = () => {
     <div className="bg-gray-50 min-h-screen">
       <div className="max-w-7xl mx-auto p-4">
         <div className="grid grid-cols-1 md:grid-cols-3 gap-4 mb-8">
-          <div className="bg-white p-5 rounded-xl shadow-md text-center">
-            <h3 className="text-lg font-semibold text-gray-700">Total Buy</h3>
-            <p className="text-2xl font-bold text-gray-900">
+          <div className="bg-white rounded-xl shadow-md text-center">
+            <div className="flex items-center justify-center flex-col p-5">
+             <FaShoppingCart className="text-blue-700" size={40} />
+            <p className="text-2xl font-bold text-gray-900 mb-1">
               {buyerData.length} properties
             </p>
             <p className="text-gray-600">Total: ${totalBuy.toLocaleString()}</p>
+            </div>
           </div>
           <div className="bg-white p-5 rounded-xl shadow-md text-center">
-            <h3 className="text-lg font-semibold text-gray-700">Total Rent</h3>
-            <p className="text-2xl font-bold text-gray-900">
+            <div className="flex items-center justify-center flex-col">
+               <FaKey className="text-blue-700" size={40} />
+            <p className="text-2xl font-bold text-gray-900 mb-1">
               {rentData.length} properties
             </p>
             <p className="text-gray-600">
               Total: ${totalRent.toLocaleString()}
             </p>
+             </div>
           </div>
           <div className="bg-white p-5 rounded-xl shadow-md text-center">
-            <h3 className="text-lg font-semibold text-gray-700">Total Sell</h3>
-            <p className="text-2xl font-bold text-gray-900">
+             <div className="flex items-center justify-center flex-col">
+           <FaTag className="text-blue-700" size={40} />
+            <p className="text-2xl font-bold text-gray-900 mb-1">
               {sellData.length} properties
             </p>
             <p className="text-gray-600">
               Total: ${totalSell.toLocaleString()}
             </p>
+            </div>
           </div>
         </div>
 

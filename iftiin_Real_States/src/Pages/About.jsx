@@ -42,7 +42,7 @@ const About = () => {
           <p className="text-gray-700 font-medium">Properties in top locations</p>
         </div>
         </div>
-         <h1 className="text-2xl font-bold text-gray-800 mb-2 text-center mt-3">Frequantly asked questions</h1>
+         {/* <h1 className="text-2xl font-bold text-gray-800 mb-2 text-center mt-3">Frequantly asked questions</h1> */}
       </div>
     </div>
   );

@@ -59,7 +59,7 @@ const Buy = () => {
       price: 210000,
       bedrooms: 5,
       bathrooms: 4,
-      area: "350 sqm",
+      area: 350,
     },
     {
       id: 6,
@@ -282,7 +282,7 @@ const Buy = () => {
                       </p>
                       <p>
                         <span className="font-semibold">
-                          {property.area} sqm
+                          {property.area.toLocaleString()} sqm
                         </span>
                       </p>
                     </div>
