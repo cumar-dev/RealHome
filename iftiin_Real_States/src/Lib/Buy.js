@@ -25,3 +25,17 @@ export const buyerData = async(currentBuyer)=> {
     toast.success('congratulation you buy your first house', {position: "top-right"});
     return data;
 }
+
+export const getBuyData = async ()=> {
+    const {data, error} = await supabase
+    .from('BuyerData')
+    .select('*')
+    .order('created_at', {ascending: false })
+    .limit(3);
+
+    if(error) {
+        toast.error('Error fetching Buy Data');
+        throw error
+    }
+    return data;
+}
