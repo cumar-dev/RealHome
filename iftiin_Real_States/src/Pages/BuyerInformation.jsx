@@ -3,6 +3,7 @@ import { useNavigate, useParams } from "react-router-dom";
 import { useAuth } from "../Context/AuthContext";
 import toast from "react-hot-toast";
 import { PiLessThanLight } from "react-icons/pi";
+import { usersBuyingOrRentingData } from "../Lib/current_users_buyed_or_rented_Data";
 const BuyerInformation = () => {
   const buyerData = [
     {
@@ -182,18 +183,46 @@ const BuyerInformation = () => {
   const [error, setError] = useState(null);
   const [success, setSucess] = useState(false);
   const [isLoading, setIsLoading] = useState(false);
+  const [type, setType] = useState("");
+  const [userId, setUserId] = useState(null);
   const { user } = useAuth();
   const navigate = useNavigate();
   useEffect(() => {
-    if (!user) {
-      toast.error("please you are not logged in..");
-      navigate("/signIn");
+    if (user) {
+      setUserId(user.id);
     }
-  }, [user, navigate]);
+  }, [user]);
 
   const { id } = useParams();
   const filteredData = buyerData.find((buy) => buy.id === Number(id));
 
+  const handleSubmit = async (event) => {
+    event.preventDefault();
+    setIsLoading(true);
+    setError(null);
+    try {
+      await usersBuyingOrRentingData({
+        full_name: fullName,
+        Email: email,
+        option: type,
+        message: message,
+        current_users_id: userId,
+      });
+      setSucess(true);
+      toast.success("your request processing is successfully submitted", {
+        position: "top-right",
+      });
+      setFullName('');
+      setEmail('');
+      setType('');
+      setMessage('')
+    } catch (error) {
+      toast.error("during the process failed", { position: "top-right" });
+      setError(error.message);
+    } finally {
+      setIsLoading(false);
+    }
+  };
   return (
     <>
       <div className="bg-gray-50 p-5">
@@ -253,7 +282,10 @@ const BuyerInformation = () => {
                     <h1 className="text-[20px] mb-2 font-bold text-[rgb(43,43,43)]">
                       More About This Property
                     </h1>
-                    <form className="flex flex-col gap-6 w-full">
+                    <form
+                      onSubmit={handleSubmit}
+                      className="flex flex-col gap-6 w-full"
+                    >
                       <div className="w-full">
                         <input
                           className="border-1 w-full border-[rgb(149, 138, 127);] py-3 px-4 rounded-md focus:outline-none"
@@ -261,6 +293,7 @@ const BuyerInformation = () => {
                           placeholder="Full name *"
                           value={fullName}
                           onChange={(e) => setFullName(e.target.value)}
+                          required
                         />
                       </div>
                       <div>
@@ -270,7 +303,22 @@ const BuyerInformation = () => {
                           placeholder="Email *"
                           value={email}
                           onChange={(e) => setEmail(e.target.value)}
+                          required
                         />
+                      </div>
+                      <div>
+                        <select
+                          value={type}
+                          onChange={(e) => setType(e.target.value)}
+                          className="border-1 w-full border-[rgb(149, 138, 127);] py-3 px-4 rounded-md focus:outline-none"
+                          required
+                        >
+                          <option disabled value="">
+                            select option
+                          </option>
+                          <option value="Buy">Buy</option>
+                          <option value="Rent">Rent</option>
+                        </select>
                       </div>
                       <div>
                         <textarea
@@ -278,6 +326,7 @@ const BuyerInformation = () => {
                           placeholder="how can i help you?"
                           value={message}
                           onChange={(e) => setMessage(e.target.value)}
+                          required
                         ></textarea>
                       </div>
                       <button
