@@ -68,7 +68,7 @@ const Header = () => {
               </NavLink>
             </nav>
 
-            <div className="flex items-center gap-4">
+            <div className="flex items-center ml-4 gap-4">
               {isLoggedIn ? (
                 <div className="flex items-center gap-1">
                   <FaUser className="text-gray-600 cursor-pointer" />
