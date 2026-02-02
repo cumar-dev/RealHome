@@ -98,7 +98,7 @@ const Header = () => {
             <div className="flex items-center mr-2 sm:hidden">
               <button
                 onClick={() => setIsMenuOpen((prev) => !prev)}
-                className="inline-flex size={24} items-center justify-center p-2 rounded-md text-gray-400hover:text-gray-600 focus:outline-none focus:ring-2 focus:ring-inset focus:ring-orange-500"
+                className="inline-flex size={24} items-center justify-center p-2 rounded-md text-gray-400hover:text-gray-600 focus:outline-none"
               >
                 {isMenueOpen ? (
                   <IoCloseOutline className="w-6 h-6 block" />
