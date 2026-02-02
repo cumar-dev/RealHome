@@ -12,7 +12,8 @@ export const buyerData = async(currentBuyer)=> {
         bedrooms: currentBuyer.bedrooms,
         bathrooms: currentBuyer.bathrooms,
         auther_buyer_id: currentBuyer.auther_buyer_id,
-        area: currentBuyer.area
+        area: currentBuyer.area,
+        // property_id: currentBuyer.property_id
        }
     ])
     .select()

@@ -67,7 +67,7 @@ const Contact = () => {
               about our properties
             </p>
           </div>
-          <div className="bg-white shadow-md rounded-2xl p-5">
+          <div className="m-4 bg-white shadow-md rounded-2xl p-5">
             <form onSubmit={handleSubmit} className="p-3">
               <div className="flex flex-col gap-3 mb-3">
                 <label className="text-gray-800 font-semibold">Full name</label>

@@ -45,7 +45,9 @@ const Sell = () => {
   };
 
   return (
-    <div className="min-h-screen bg-gray-50 flex items-center justify-center p-4">
+    <div className="max-w-7xl mx-auto bg-gray-50 p-4">
+      <p className="text-lg fontsemibold mb-5">Here is the place which every one needs to sell a properties can display here</p>
+      <div className="flex justify-center items-center">
       <form
         onSubmit={handleSubmit}
         className="bg-white w-full max-w-lg p-6 rounded-xl shadow-md space-y-4"
@@ -162,6 +164,7 @@ const Sell = () => {
           {isLoading ? "Submitting..." : "Submit Property"}
         </button>
       </form>
+      </div>
     </div>
   );
 };

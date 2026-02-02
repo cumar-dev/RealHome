@@ -213,6 +213,7 @@ const Buy = () => {
         bathrooms: property.bathrooms,
         area: property.area,
         auther_buyer_id: userId,
+        // property_id: property.property_id
       });
       setSucess(true);
       toast.success("property uploaded successfully", {
@@ -232,13 +233,13 @@ const Buy = () => {
   };
   return (
     <>
-      <div className="bg-gray-50 p-4">
+      <div className="bg-gray-50 py-4 px-3 sm:px-6 lg:px-8">
         <div className="max-w-7xl mx-auto px-4">
-          <div className="grid grid-cols-1 gap-6 md:grid-cols-2 lg:grid-cols-3">
+          <div className="grid grid-cols-1 gap-5 sm:grid-cols-1 lg:grid-cols-3">
             {buyProperies.map((property) => (
               <div
                 key={property.id}
-                className="bg-white rounded-2xl shadow-md hover:shadow-lg transition overflow-hidden flex flex-col"
+                className="bg-white rounded-2xl sm:w-0 md:w-full shadow-md hover:shadow-lg transition overflow-hidden flex flex-col"
               >
                 <Link
                   to={`/dashboard/buy/${property.id}`}
@@ -246,7 +247,7 @@ const Buy = () => {
                 >
                   <div className="relative">
                     <img
-                      className="w-full h-56 object-cover"
+                      className="w-full h-48 sm:h-56 object-cover"
                       src={property.image}
                       alt={property.title}
                     />
@@ -260,11 +261,11 @@ const Buy = () => {
                     </button>
                   </div>
 
-                  <div className="p-5 space-y-2">
+                  <div className="p-4 sm:p-5 space-y-1 sm:space-y-2">
                     <h3 className="text-lg font-semibold text-gray-800">
                       {property.title}
                     </h3>
-                    <p className="text-xl font-bold text-gray-900">
+                    <p className="text-lg sm:text-xl font-bold text-gray-900">
                       ${property.price.toLocaleString()}
                     </p>
                     <div className="flex gap-4 text-sm text-gray-600">
@@ -291,10 +292,10 @@ const Buy = () => {
 
                 <button
                   onClick={() => handleUploadData(property)}
-                  className="mt-auto mx-5 mb-5 py-2 w-auto cursor-pointer text-center rounded-lg bg-blue-600 text-white font-medium hover:bg-blue-700 transition flex items-center justify-center"
+                  className="mt-auto mx-4 sm:mx-5 mb-4 sm:mb-5 py-3 w-full sm:w-auto cursor-pointer text-center rounded-lg bg-blue-600 text-white font-medium hover:bg-blue-700 transition flex items-center justify-center"
                 >
                   <div className="flex justify-center items-center gap-3">
-                    <FaShoppingCart className="ml-2" size={18} />
+                    <FaShoppingCart className="text-base sm:text-lg"  />
                     <span>{isLoading ? "submitting..." : "Buy Now"}</span>
                   </div>
                 </button>

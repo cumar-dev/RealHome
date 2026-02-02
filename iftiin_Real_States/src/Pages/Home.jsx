@@ -27,14 +27,20 @@ const Home = () => {
       setIsLoading(false);
     }
   };
-  useEffect(() => {
-    fetchBuyData();
-    if (!user) {
-      toast.error("please you are not logged please go signIn page..");
-      navigate("/signIn");
-      return;
-    }
-  }, [user]);
+ useEffect(() => {
+  if (!user) {
+    toast.error("Please sign in first");
+    navigate("/signIn");
+    return;
+  }
+
+  const fetchData = async () => {
+    await fetchBuyData();
+  };
+
+  fetchData();
+}, [user]);
+
   return (
     <div className="bg-gray-50">
       <div
@@ -61,7 +67,7 @@ const Home = () => {
       </div>
 
       <div className="max-w-7xl mx-auto mb-4">
-        <div className="flex items-center gap-1 mt-2 mb-4">
+        <div className="p-4 flex items-center gap-1 mt-2 mb-4">
           <FaHome className="text-gray-800 text-xl" />
           <h1 className="text-[24px] font-bold leading-[28px]">New Listings</h1>
         </div>
@@ -71,7 +77,7 @@ const Home = () => {
             <div className="animate-spin rounded-full h-12 w-12 border-t-2 border-blue-500"></div>
           </div>
         ) : (
-          <div className="grid grid-cols-1 gap-6 md:grid-cols-2 lg:grid-cols-3">
+          <div className="grid grid-cols-1 p-3 gap-6 md:grid-cols-2 lg:grid-cols-3">
             {buyerData.map((item) => (
               <div
                 key={item.id}

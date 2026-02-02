@@ -66,6 +66,11 @@ const GetStarted = () => {
           </p>
         </div>
         <div className="bg-white w-full shadow-lg rounded-lg p-8">
+         {error && (
+            <div className="mb-4 p-3 bg-red-100 text-red-700 rounded-md text-sm">
+              {error}
+            </div>
+          )}
           <form onSubmit={handleSubmit}>
             <div className="flex flex-col gap-1 mb-6">
               <label className="text-gray-700 text-sm font-semibold mb-2">

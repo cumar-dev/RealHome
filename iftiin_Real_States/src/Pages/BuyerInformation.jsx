@@ -242,7 +242,7 @@ const BuyerInformation = () => {
           </div>
           {filteredData && (
             <div key={filteredData.id}>
-              <div className="flex gap-6 sm:flex-col md:flex-row">
+              <div className="flex gap-6 sm:flex-col md:flex-col lg:flex-row">
                 <div>
                   <img
                     className="rounded-lg w-[825px] h-[420px] mb-1"

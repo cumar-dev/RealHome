@@ -60,10 +60,10 @@ const Dashboard = () => {
   return (
     <div className="bg-gray-50 min-h-screen">
       <div className="max-w-7xl mx-auto p-4">
-        <div className="grid grid-cols-1 md:grid-cols-3 gap-4 mb-8">
+        <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-4 mb-8">
           <div className="bg-white rounded-xl shadow-md text-center">
             <div className="flex items-center justify-center flex-col p-5">
-             <FaShoppingCart className="text-blue-700" size={40} />
+             <FaShoppingCart className="text-[#003D99]" size={40} />
             <p className="text-2xl font-bold text-gray-900 mb-1">
               {buyerData.length} properties
             </p>
@@ -72,7 +72,7 @@ const Dashboard = () => {
           </div>
           <div className="bg-white p-5 rounded-xl shadow-md text-center">
             <div className="flex items-center justify-center flex-col">
-               <FaKey className="text-blue-700" size={40} />
+               <FaKey className="text-[#003D99]" size={40} />
             <p className="text-2xl font-bold text-gray-900 mb-1">
               {rentData.length} properties
             </p>
@@ -83,7 +83,7 @@ const Dashboard = () => {
           </div>
           <div className="bg-white p-5 rounded-xl shadow-md text-center">
              <div className="flex items-center justify-center flex-col">
-           <FaTag className="text-blue-700" size={40} />
+           <FaTag className="text-[#003D99]" size={40} />
             <p className="text-2xl font-bold text-gray-900 mb-1">
               {sellData.length} properties
             </p>
@@ -94,15 +94,15 @@ const Dashboard = () => {
           </div>
         </div>
 
-        <h1 className="mb-3 text-2xl font-semibold">
-          Latest properties bought by us
+        <h1 className="mb-5 text-[#3385FF] text-2xl font-semibold">
+           Properties daily buy for us
         </h1>
         {buyLoading ? (
           <div className="min-h-[200px] flex items-center justify-center">
             <div className="animate-spin rounded-full h-12 w-12 border-t-2 border-b-2 border-blue-500"></div>
           </div>
         ) : (
-          <div className="grid grid-cols-1 gap-6 md:grid-cols-2 lg:grid-cols-3 mb-10">
+          <div className="grid grid-cols-1 gap-6 md:grid-cols-1 lg:grid-cols-3 mb-10">
             {buyerData.map((item) => (
               <div
                 key={item.id}
@@ -114,6 +114,9 @@ const Dashboard = () => {
                   className="w-full h-48 object-cover"
                 />
                 <div className="p-4">
+                  <p className="font-semibold text-lg mb-1">
+                    {item.title}
+                  </p>
                   <p className="font-semibold mb-1">
                     ${item.price?.toLocaleString()}
                   </p>
@@ -126,15 +129,15 @@ const Dashboard = () => {
           </div>
         )}
 
-        <h1 className="mb-3 text-2xl font-semibold">
-          Latest properties rented by us
+        <h1 className="mb-5 text-[#3385FF] text-2xl font-semibold">
+            Properties daily rented for us
         </h1>
         {rentLoading ? (
           <div className="min-h-[200px] flex items-center justify-center">
             <div className="animate-spin rounded-full h-12 w-12 border-t-2 border-b-2 border-blue-500"></div>
           </div>
         ) : (
-          <div className="grid grid-cols-1 gap-6 md:grid-cols-2 lg:grid-cols-3 mb-10">
+          <div className="grid grid-cols-1 gap-6 md:grid-cols-1 lg:grid-cols-3 mb-10">
             {rentData.map((item) => (
               <div
                 key={item.id}
@@ -146,6 +149,9 @@ const Dashboard = () => {
                   className="w-full h-48 object-cover"
                 />
                 <div className="p-4">
+                  <p className="font-semibold text-lg mb-1">
+                    {item.title}
+                  </p>
                   <p className="font-semibold mb-1">
                     ${item.price?.toLocaleString()}
                   </p>
@@ -158,15 +164,15 @@ const Dashboard = () => {
           </div>
         )}
 
-        <h1 className="mb-3 text-2xl font-semibold">
-          Latest properties we sell
+        <h1 className="mb-5 text-[#3385FF] text-2xl font-semibold">
+           Properties needs for sell
         </h1>
         {sellLoading ? (
           <div className="min-h-[200px] flex items-center justify-center">
             <div className="animate-spin rounded-full h-12 w-12 border-t-2 border-b-2 border-blue-500"></div>
           </div>
         ) : (
-          <div className="grid grid-cols-1 gap-6 md:grid-cols-2 lg:grid-cols-3 mb-10">
+          <div className="grid grid-cols-1 gap-6 md:grid-cols-1 lg:grid-cols-3 mb-10">
             {sellData.map((item) => (
               <div
                 key={item.id}

@@ -1,4 +1,4 @@
-import React from "react";
+import React, { useState } from "react";
 import {
   FaHome,
   FaKey,
@@ -17,11 +17,11 @@ const DashboardLayout = () => {
     isActive
       ? `${linkBase} bg-blue-50 text-blue-700 border-blue-600 font-semibold`
       : `${linkBase} text-slate-500 border-transparent hover:bg-slate-50 hover:text-slate-900`;
-      const {logout, profile} = useAuth();
+  const { logout, profile } = useAuth();
 
   return (
     <div className="flex min-h-screen bg-gray-50 mb-4">
-      <aside className="w-72 bg-white flex flex-col shadow-xl z-20">
+      <aside className="hidden md:block lg:block w-72 bg-white flex flex-col shadow-xl z-20">
         <div className="p-8">
           <div className="flex items-center gap-3">
             <div className="bg-blue-600 p-2 rounded-lg shadow-blue-200 shadow-lg">
@@ -59,7 +59,10 @@ const DashboardLayout = () => {
           </NavLink>
         </nav>
         <div className="p-6 border-t border-slate-100">
-          <button onClick={()=> logout()} className="flex items-center gap-3 text-slate-500 hover:text-red-600 transition-colors font-medium">
+          <button
+            onClick={() => logout()}
+            className="flex items-center gap-3 text-slate-500 hover:text-red-600 transition-colors font-medium"
+          >
             <FaSignOutAlt />
             <span>Logout</span>
           </button>
