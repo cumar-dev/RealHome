@@ -15,7 +15,7 @@ const Rent = () => {
     {
       id: 1,
       image:
-        "../src/Rent/16a881ab06128f904dcbd84b62b382efl-m1338688971rd-w480_h360.jpg",
+        "../public/Rent/16a881ab06128f904dcbd84b62b382efl-m1338688971rd-w480_h360.jpg",
       title: "Modern Apartment in City Center",
       price: 900,
       bedrooms: 2,
@@ -25,7 +25,7 @@ const Rent = () => {
     {
       id: 2,
       image:
-        "../src/Rent/31f137238c19a9dfc045337e3b687147c-f3348980042rd-w480_h360.jpg",
+        "../public/Rent/31f137238c19a9dfc045337e3b687147c-f3348980042rd-w480_h360.jpg",
       title: "Luxury Villa for Rent",
       price: 2500,
       bedrooms: 5,
@@ -35,7 +35,7 @@ const Rent = () => {
     {
       id: 3,
       image:
-        "../src/Rent/342eef09dea9026b362f75d21010cfdbl-m3165639764rd-w480_h360.jpg",
+        "../public/Rent/342eef09dea9026b362f75d21010cfdbl-m3165639764rd-w480_h360.jpg",
       title: "Cozy Family House",
       price: 1200,
       bedrooms: 3,
@@ -45,7 +45,7 @@ const Rent = () => {
     {
       id: 4,
       image:
-        "../src/Rent/399ad7f7550457c2ef7e984eab24de9bc-f3515815654rd-w480_h360.jpg",
+        "../public/Rent/399ad7f7550457c2ef7e984eab24de9bc-f3515815654rd-w480_h360.jpg",
       title: "Beachside Rental Home",
       price: 1800,
       bedrooms: 4,
@@ -55,7 +55,7 @@ const Rent = () => {
     {
       id: 5,
       image:
-        "../src/Rent/853f0f3f1d2aeeea3a5e46e329ae9049l-m2557997177rd-w480_h360.jpg",
+        "../public/Rent/853f0f3f1d2aeeea3a5e46e329ae9049l-m2557997177rd-w480_h360.jpg",
       title: "Affordable Apartment",
       price: 650,
       bedrooms: 1,
@@ -65,7 +65,7 @@ const Rent = () => {
     {
       id: 6,
       image:
-        "../src/Rent/2899432424d7819e50f96ed2d24c47c8c-f4101090818rd-w480_h360.jpg",
+        "../public/Rent/2899432424d7819e50f96ed2d24c47c8c-f4101090818rd-w480_h360.jpg",
       title: "Spacious Duplex House",
       price: 1600,
       bedrooms: 4,
@@ -75,7 +75,7 @@ const Rent = () => {
     {
       id: 7,
       image:
-        "../src/Rent/a72cbc28f5059ac8ab8cf4b6712e0ed3l-m547207634rd-w480_h360.jpg",
+        "../public/Rent/a72cbc28f5059ac8ab8cf4b6712e0ed3l-m547207634rd-w480_h360.jpg",
       title: "Modern Studio Apartment",
       price: 500,
       bedrooms: 1,
@@ -85,7 +85,7 @@ const Rent = () => {
     {
       id: 8,
       image:
-        "../src/Rent/a665ee3a4d689bf9a4a1d7933282788cl-m1540984680rd-w480_h360.jpg",
+        "../public/Rent/a665ee3a4d689bf9a4a1d7933282788cl-m1540984680rd-w480_h360.jpg",
       title: "Family Villa with Garden",
       price: 2000,
       bedrooms: 5,
@@ -95,7 +95,7 @@ const Rent = () => {
     {
       id: 9,
       image:
-        "../src/Rent/d62d1c2f11ebf086d00914df4c927106l-m2558544331rd-w480_h360.jpg",
+        "../public/Rent/d62d1c2f11ebf086d00914df4c927106l-m2558544331rd-w480_h360.jpg",
       title: "City Residential House",
       price: 1100,
       bedrooms: 3,
@@ -105,7 +105,7 @@ const Rent = () => {
     {
       id: 10,
       image:
-        "../src/Rent/f77b5020edf97f33447e7a5c14910d70l-m1202305871rd-w480_h360.jpg",
+        "../public/Rent/f77b5020edf97f33447e7a5c14910d70l-m1202305871rd-w480_h360.jpg",
       title: "Premium Penthouse Apartment",
       price: 2800,
       bedrooms: 4,
