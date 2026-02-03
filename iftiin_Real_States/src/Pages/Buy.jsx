@@ -14,7 +14,7 @@ const Buy = () => {
     {
       id: 1,
       image:
-        "../public/Buy/4bfbc2e8818db0166f01183d190878b0l-m1229898593rd-w480_h360.jpg",
+        "/Buy/4bfbc2e8818db0166f01183d190878b0l-m1229898593rd-w480_h360.jpg",
       title: "Modern Family House",
       price: 150000,
       bedrooms: 4,
@@ -24,7 +24,7 @@ const Buy = () => {
     {
       id: 2,
       image:
-        "../public/Buy/4d8054f46decc3f2710d8941bf2f3765l-b2956316570rd-w480_h360.jpg",
+        "/Buy/4d8054f46decc3f2710d8941bf2f3765l-b2956316570rd-w480_h360.jpg",
       title: "Beachside Villa",
       price: 180000,
       bedrooms: 5,
@@ -34,7 +34,7 @@ const Buy = () => {
     {
       id: 3,
       image:
-        "../public/Buy/8d0b15d91b741947f9616528b57966a6l-m3931962803rd-w480_h360.jpg",
+        "/Buy/8d0b15d91b741947f9616528b57966a6l-m3931962803rd-w480_h360.jpg",
       title: "Elegant Townhouse",
       price: 160000,
       bedrooms: 3,
@@ -44,7 +44,7 @@ const Buy = () => {
     {
       id: 4,
       image:
-        "../public/Buy/43d6fa7211147b995b9739b5a9903115l-m1524037929rd-w480_h360.jpg",
+        "/Buy/43d6fa7211147b995b9739b5a9903115l-m1524037929rd-w480_h360.jpg",
       title: "Luxury Villa with Garden",
       price: 450000,
       bedrooms: 6,
@@ -54,7 +54,7 @@ const Buy = () => {
     {
       id: 5,
       image:
-        "../public/Buy/46edca8ec8902d700f610a009e93c152l-b13643347rd-w480_h360.jpg",
+        "/Buy/46edca8ec8902d700f610a009e93c152l-b13643347rd-w480_h360.jpg",
       title: "New Duplex House",
       price: 210000,
       bedrooms: 5,
@@ -64,7 +64,7 @@ const Buy = () => {
     {
       id: 6,
       image:
-        "../public/Buy/94fbf7b6d9fafc3bd61aa8a63c93678al-m1312707416rd-w480_h360.jpg",
+        "/Buy/94fbf7b6d9fafc3bd61aa8a63c93678al-m1312707416rd-w480_h360.jpg",
       title: "City Residential House",
       price: 130000,
       bedrooms: 3,
@@ -74,7 +74,7 @@ const Buy = () => {
     {
       id: 7,
       image:
-        "../public/Buy/99da02d7f46dbae2846b13c3a681f3ffl-m1670888686rd-w480_h360 (1).jpg",
+        "/Buy/99da02d7f46dbae2846b13c3a681f3ffl-m1670888686rd-w480_h360 (1).jpg",
       title: "Premium Family Villa",
       price: 280000,
       bedrooms: 4,
@@ -84,7 +84,7 @@ const Buy = () => {
     {
       id: 8,
       image:
-        "../public/Buy/136cd05487e07acb8bcefef2bfee9b4al-m2565456609rd-w480_h360.jpg",
+        "/Buy/136cd05487e07acb8bcefef2bfee9b4al-m2565456609rd-w480_h360.jpg",
       title: "Classic Family Home",
       price: 140000,
       bedrooms: 3,
@@ -94,7 +94,7 @@ const Buy = () => {
     {
       id: 9,
       image:
-        "../public/Buy/80485b93ac0c5023717248800707a385l-m2812939151rd-w480_h360.jpg",
+        "/Buy/80485b93ac0c5023717248800707a385l-m2812939151rd-w480_h360.jpg",
       title: "Modern City Villa",
       price: 260000,
       bedrooms: 4,
@@ -104,7 +104,7 @@ const Buy = () => {
     {
       id: 10,
       image:
-        "../public/Buy/87370bcdd802de0f45f143ea329ba975l-m2900544046rd-w480_h360.jpg",
+        "/Buy/87370bcdd802de0f45f143ea329ba975l-m2900544046rd-w480_h360.jpg",
       title: "Spacious Duplex Residence",
       price: 230000,
       bedrooms: 5,
@@ -114,7 +114,7 @@ const Buy = () => {
     {
       id: 11,
       image:
-        "../public/Buy/97875c4452c40e18ef46e8cb0c6fd5f2l-b1634647691rd-w480_h360 (1).jpg",
+        "/Buy/97875c4452c40e18ef46e8cb0c6fd5f2l-b1634647691rd-w480_h360 (1).jpg",
       title: "Luxury Urban House",
       price: 320000,
       bedrooms: 4,
@@ -124,7 +124,7 @@ const Buy = () => {
     {
       id: 12,
       image:
-        "../public/Buy/805251ff0fc9f3d65da76fe31ea849a5l-m1004254964rd-w480_h360 (1).jpg",
+        "/Buy/805251ff0fc9f3d65da76fe31ea849a5l-m1004254964rd-w480_h360 (1).jpg",
       title: "Affordable Family House",
       price: 110000,
       bedrooms: 3,
@@ -134,7 +134,7 @@ const Buy = () => {
     {
       id: 13,
       image:
-        "../public/Buy/18437876bfee3b407919a84ed8e6b0c3l-m1228867737rd-w480_h360.jpg",
+        "/Buy/18437876bfee3b407919a84ed8e6b0c3l-m1228867737rd-w480_h360.jpg",
       title: "Elegant Modern Villa",
       price: 380000,
       bedrooms: 6,
@@ -144,7 +144,7 @@ const Buy = () => {
     {
       id: 14,
       image:
-        "../public/Buy/d33314bf54690718dca93c07897967e4l-m2423621771rd-w480_h360.jpg",
+        "/Buy/d33314bf54690718dca93c07897967e4l-m2423621771rd-w480_h360.jpg",
       title: "Contemporary Smart Home",
       price: 295000,
       bedrooms: 4,
@@ -154,7 +154,7 @@ const Buy = () => {
     {
       id: 15,
       image:
-        "../public/Buy/46edca8ec8902d700f610a009e93c152l-b13643347rd-w480_h360.jpg",
+        "/Buy/46edca8ec8902d700f610a009e93c152l-b13643347rd-w480_h360.jpg",
       title: "Premium Garden Residence",
       price: 340000,
       bedrooms: 5,
@@ -164,7 +164,7 @@ const Buy = () => {
     {
       id: 16,
       image:
-        "../public/Buy/45ebd8d4d03a586da359a13d062373a4l-m4259845349rd-w480_h360.jpg",
+        "/Buy/45ebd8d4d03a586da359a13d062373a4l-m4259845349rd-w480_h360.jpg",
       title: "Modern Corner Villa",
       price: 410000,
       bedrooms: 5,
@@ -174,7 +174,7 @@ const Buy = () => {
     {
       id: 17,
       image:
-        "../public/Buy/10272abaa00526778dda070d137fcb42l-m3869285732rd-w480_h360.jpg",
+        "/Buy/10272abaa00526778dda070d137fcb42l-m3869285732rd-w480_h360.jpg",
       title: "Minimalist Family Residence",
       price: 125000,
       bedrooms: 3,
