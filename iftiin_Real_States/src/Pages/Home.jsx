@@ -27,19 +27,13 @@ const Home = () => {
       setIsLoading(false);
     }
   };
- useEffect(() => {
-  if (!user) {
-    toast.error("Please sign in first");
-    navigate("/signIn");
-    return;
-  }
+  useEffect(() => {
+    const fetchData = async () => {
+      await fetchBuyData();
+    };
 
-  const fetchData = async () => {
-    await fetchBuyData();
-  };
-
-  fetchData();
-}, [user]);
+    fetchData();
+  }, []);
 
   return (
     <div className="bg-gray-50">
