@@ -45,7 +45,14 @@ const App = () => {
                 <Route path="rent/:id" element={<RentInformation />} />
                 <Route path="sell" element={<Sell />} />
               </Route>
-              <Route path="/contact" element={<Contact />} />
+              <Route
+                path="/contact"
+                element={
+                  <ProtectedRout>
+                    <Contact />
+                  </ProtectedRout>
+                }
+              />
               <Route
                 path="/signIn"
                 element={
