@@ -28,11 +28,7 @@ const Contact = () => {
       navigate("/signIn");
       return;
     }
-    // if (!fullName.trim() || message.trim() || email.trim()) {
-    //   toast.error("please during the registration not needs to make a space");
-    //   setError("please the space not needs check it...");
-    //   return;
-    // }
+   
     try {
       await gettingNewUserInfo(
         {
