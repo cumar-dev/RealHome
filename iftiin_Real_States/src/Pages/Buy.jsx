@@ -1,4 +1,4 @@
-import React, { useEffect, useState } from "react";
+import React, { useEffect, useRef, useState } from "react";
 import toast from "react-hot-toast";
 import { FaHeart, FaShoppingCart } from "react-icons/fa";
 import { Link, useNavigate } from "react-router-dom";
@@ -10,6 +10,7 @@ const Buy = () => {
   const [error, setError] = useState(null);
   const [success, setSucess] = useState(false);
   const [userId, setUserId] = useState(null);
+  const [liked, setLiked] = useState(false);
   const buyProperies = [
     {
       id: 1,
@@ -53,8 +54,7 @@ const Buy = () => {
     },
     {
       id: 5,
-      image:
-        "/Buy/46edca8ec8902d700f610a009e93c152l-b13643347rd-w480_h360.jpg",
+      image: "/Buy/46edca8ec8902d700f610a009e93c152l-b13643347rd-w480_h360.jpg",
       title: "New Duplex House",
       price: 210000,
       bedrooms: 5,
@@ -153,8 +153,7 @@ const Buy = () => {
     },
     {
       id: 15,
-      image:
-        "/Buy/46edca8ec8902d700f610a009e93c152l-b13643347rd-w480_h360.jpg",
+      image: "/Buy/46edca8ec8902d700f610a009e93c152l-b13643347rd-w480_h360.jpg",
       title: "Premium Garden Residence",
       price: 340000,
       bedrooms: 5,
@@ -231,6 +230,12 @@ const Buy = () => {
       setIsLoading(false);
     }
   };
+  const heartRef = useRef(null);
+  const toggleCurrentColor = () => {
+    if (heartRef.current) {
+      heartRef.current.classList.toggle("heart");
+    }
+  };
   return (
     <>
       <div className="bg-gray-50 py-4 px-3 sm:px-6 lg:px-8">
@@ -257,7 +262,10 @@ const Buy = () => {
                     </span>
 
                     <button className="absolute top-3 right-3 bg-white w-10 h-10 rounded-full flex items-center justify-center shadow hover:bg-gray-100 transition">
-                      <FaHeart className="text-gray-600" />
+                      <FaHeart
+                        onClick={() => setLiked(!liked)}
+                        className={`cursor-pointer ${liked ? "text-red-800" : "text-gray-600"}`}
+                      />
                     </button>
                   </div>
 
@@ -291,12 +299,16 @@ const Buy = () => {
                 </Link>
 
                 <button
+                  type="button"
                   onClick={() => handleUploadData(property)}
                   className="mt-auto mx-4 sm:mx-5 mb-4 sm:mb-5 py-3 w-full sm:w-auto cursor-pointer text-center rounded-lg bg-blue-600 text-white font-medium hover:bg-blue-700 transition flex items-center justify-center"
+                  // disabled={isLoading}
                 >
                   <div className="flex justify-center items-center gap-3">
-                    <FaShoppingCart className="text-base sm:text-lg"  />
-                    <span>{isLoading ? "submitting..." : "Buy Now"}</span>
+                    <FaShoppingCart className="text-base sm:text-lg" />
+                    <span disabled={isLoading}>
+                      {isLoading ? "submitting..." : "Buy Now"}
+                    </span>
                   </div>
                 </button>
               </div>

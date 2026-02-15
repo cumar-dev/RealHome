@@ -8,9 +8,10 @@ import { uploadedRentLocalImageToBucket } from "../Lib/rent_images";
 
 const Rent = () => {
   const [isLoading, setIsLoading] = useState(false);
-    const [error, setError] = useState(null);
-    const [success, setSucess] = useState(false);
-    const [userId, setUserId] = useState(null);
+  const [error, setError] = useState(null);
+  const [success, setSucess] = useState(false);
+  const [userId, setUserId] = useState(null);
+  const [liked, setLiked] = useState(false);
   const rentProperties = [
     {
       id: 1,
@@ -60,7 +61,7 @@ const Rent = () => {
       price: 650,
       bedrooms: 1,
       bathrooms: 1,
-      area: 80
+      area: 80,
     },
     {
       id: 6,
@@ -113,49 +114,53 @@ const Rent = () => {
       area: 350,
     },
   ];
-  
-  const {user} = useAuth();
+
+  const { user } = useAuth();
   const navigate = useNavigate();
-  useEffect(()=> {
-    if(user) {
+  useEffect(() => {
+    if (user) {
       setUserId(user.id);
     }
-  }, [user])
+  }, [user]);
   const handleUploadData = async (rent) => {
-     if(!user) {
-      toast.error('please you are not logged in go signIn page..', {position:"top-right"});
-      navigate('/signIn');
-      return
-     }
+    if (!user) {
+      toast.error("please you are not logged in go signIn page..", {
+        position: "top-right",
+      });
+      navigate("/signIn");
+      return;
+    }
 
-     setIsLoading(true);
-     setError(null);
-     try {
+    setIsLoading(true);
+    setError(null);
+    try {
       const publicUrl = await uploadedRentLocalImageToBucket(
         rent.image,
         `rent-${rent.id}.jpg`,
-      )
-       if (!publicUrl) throw new Error("Failed to upload image");
-      await rentData(
-        {
-          image: publicUrl,
-          title: rent.title,
-          price: rent.price,
-          bedrooms: rent.bedrooms,
-          bathrooms: rent.bathrooms,
-          area: rent.area,
-          current_id: userId
-        }
-      )
+      );
+      if (!publicUrl) throw new Error("Failed to upload image");
+      await rentData({
+        image: publicUrl,
+        title: rent.title,
+        price: rent.price,
+        bedrooms: rent.bedrooms,
+        bathrooms: rent.bathrooms,
+        area: rent.area,
+        current_id: userId,
+      });
       setSucess(true);
-      toast.success('property uploaded successfully', {position: "top-right"});
-     } catch (error) {
-      toast.error('error happend during uploading data in supabase ...', {position:"top-right"})
+      toast.success("property uploaded successfully", {
+        position: "top-right",
+      });
+    } catch (error) {
+      toast.error("error happend during uploading data in supabase ...", {
+        position: "top-right",
+      });
       setError(error.message);
-     }finally {
+    } finally {
       setIsLoading(false);
-     }
-  }
+    }
+  };
   return (
     <div className="bg-gray-50">
       <div className="max-w-7xl mx-auto p-5">
@@ -181,7 +186,10 @@ const Rent = () => {
                 </span>
 
                 <button className="absolute top-3 right-3 bg-white w-10 h-10 rounded-full flex items-center justify-center shadow hover:bg-gray-100 transition">
-                  <FaHeart className="text-gray-600" />
+                  <FaHeart
+                    onClick={() => setLiked(!liked)}
+                    className={`cursor-pointer ${liked ? "text-red-800" : "text-gray-600"}`}
+                  />
                 </button>
                 <div className="p-5 space-y-2">
                   <h3 className="text-lg font-semibold text-gray-800">
@@ -192,24 +200,24 @@ const Rent = () => {
                   </p>
                   <div className="flex gap-4 text-sm text-gray-600">
                     <p>
-                      <span className="font-semibold">{rent.bedrooms}</span>{" "}
-                      bed
+                      <span className="font-semibold">{rent.bedrooms}</span> bed
                     </p>
                     <p>
-                      <span className="font-semibold">
-                        {rent.bathrooms}
-                      </span>{" "}
+                      <span className="font-semibold">{rent.bathrooms}</span>{" "}
                       bath
                     </p>
                     <p>
-                      <span className="font-semibold">{rent.area.toLocaleString()} sqm</span>
+                      <span className="font-semibold">
+                        {rent.area.toLocaleString()} sqm
+                      </span>
                     </p>
                   </div>
                 </div>
               </Link>
-              <button 
-              onClick={()=> handleUploadData(rent)}
-              className="mt-auto mx-5 mb-5 py-2 w-auto cursor-pointer text-center rounded-lg bg-blue-600 text-white font-medium hover:bg-blue-700 transition flex items-center justify-center">
+              <button
+                onClick={() => handleUploadData(rent)}
+                className="mt-auto mx-5 mb-5 py-2 w-auto cursor-pointer text-center rounded-lg bg-blue-600 text-white font-medium hover:bg-blue-700 transition flex items-center justify-center"
+              >
                 <div className="flex justify-center items-center gap-3">
                   <FaKey className="ml-2" size={18} />
                   <span>{isLoading ? "submitting.." : "Rent Now"}</span>

@@ -10,7 +10,7 @@ const Home = () => {
   const [isLoading, setIsLoading] = useState(true);
   const { user } = useAuth();
   const navigate = useNavigate();
-
+  const [liked, setLiked] = useState({});
   const fetchBuyData = async () => {
     setIsLoading(true);
     try {
@@ -35,6 +35,12 @@ const Home = () => {
     fetchData();
   }, []);
 
+  const toggleLike = (id) => {
+    setLiked((prev) => ({
+      ...prev,
+      [id]: !prev[id],
+    }));
+  };
   return (
     <div className="bg-gray-50">
       <div
@@ -87,7 +93,12 @@ const Home = () => {
                     New
                   </span>
                   <button className="absolute top-3 right-3 bg-white w-10 h-10 rounded-full flex items-center justify-center shadow hover:bg-gray-100 transition">
-                    <FaHeart className="text-red-600" />
+                    <FaHeart
+                      onClick={() => toggleLike(item.id)}
+                      className={`cursor-pointer ${
+                        liked[item.id] ? "text-red-600" : "text-gray-600"
+                      }`}
+                    />
                   </button>
                 </div>
 

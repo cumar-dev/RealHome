@@ -61,7 +61,7 @@ const Dashboard = () => {
     <div className="bg-gray-50 min-h-screen">
       <div className="max-w-7xl mx-auto p-4">
         <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-4 mb-8">
-          <div className="bg-white rounded-xl shadow-md text-center">
+          <div className="bg-white rounded-xl border-b-5 border-[#ff006e] shadow-md text-center">
             <div className="flex items-center justify-center flex-col p-5">
              <FaShoppingCart className="text-[#003D99]" size={40} />
             <p className="text-2xl font-bold text-gray-900 mb-1">
@@ -70,7 +70,7 @@ const Dashboard = () => {
             <p className="text-gray-600">Total: ${totalBuy.toLocaleString()}</p>
             </div>
           </div>
-          <div className="bg-white p-5 rounded-xl shadow-md text-center">
+          <div className="bg-white p-5 rounded-xl border-b-5 border-[#335c67] shadow-md text-center">
             <div className="flex items-center justify-center flex-col">
                <FaKey className="text-[#003D99]" size={40} />
             <p className="text-2xl font-bold text-gray-900 mb-1">
@@ -81,7 +81,7 @@ const Dashboard = () => {
             </p>
              </div>
           </div>
-          <div className="bg-white p-5 rounded-xl shadow-md text-center">
+          <div className="bg-white p-5 rounded-xl border-b-5 border[#fca311] shadow-md text-center">
              <div className="flex items-center justify-center flex-col">
            <FaTag className="text-[#003D99]" size={40} />
             <p className="text-2xl font-bold text-gray-900 mb-1">
